@@ -1,10 +1,8 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-#include <QStyledItemDelegate>
 #include <QMessageBox>
 #include <QFile>
-#include <QMessageBox>
 #include <QFileDialog>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -102,6 +100,7 @@ void MainWindow::loadData() {
 
             QListWidgetItem* item = new QListWidgetItem( text );
             item->setCheckState( checked ? Qt::Checked : Qt::Unchecked );
+            changeTaskState( item );
             ui->listWidget->addItem( item );
         }
     }
